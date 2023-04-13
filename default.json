@@ -15,5 +15,6 @@
   "timezone": "Europe/Amsterdam",
   "dependencyDashboardTitle": "Renovate Dashboard",
   "commitBodyTable": true,
-  "rebaseWhen": "conflicted"
+  "rebaseWhen": "conflicted",
+  "additionalBranchPrefix": "{{manager}}/"
 }
