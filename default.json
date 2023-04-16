@@ -8,7 +8,8 @@
     ":dependencyDashboard",
     "docker:enableMajor",
     "docker:pinDigests",
-    ":enablePreCommit"
+    ":enablePreCommit",
+    ":assignee(damoun)",
   ],
   "onboarding": true,
   "requireConfig": "required",
