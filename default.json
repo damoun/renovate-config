@@ -5,6 +5,8 @@
     ":separateMultipleMajorReleases",
     ":timezone(Europe/Amsterdam)",
     ":label(dependencies)",
+    ":label({{updateType}})",
+    ":label({{manager}})",
     ":dependencyDashboard",
     "docker:enableMajor",
     "docker:pinDigests",
@@ -22,7 +24,8 @@
     {
       "matchUpdateTypes": ["minor", "patch"],
       "matchCurrentVersion": "!/^0/",
-      "automerge": true
+      "automerge": true,
+      "labels": ["automerged"]
     }
   ]
 }
