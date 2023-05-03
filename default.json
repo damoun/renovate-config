@@ -17,5 +17,12 @@
   "dependencyDashboardTitle": "Renovate Dashboard",
   "commitBodyTable": true,
   "rebaseWhen": "conflicted",
-  "additionalBranchPrefix": "{{manager}}/"
+  "additionalBranchPrefix": "{{manager}}/",
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    }
+  ]
 }
