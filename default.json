@@ -4,9 +4,6 @@
     "config:base",
     ":separateMultipleMajorReleases",
     ":timezone(Europe/Amsterdam)",
-    ":label(dependencies)",
-    ":label({{updateType}})",
-    ":label({{manager}})",
     ":dependencyDashboard",
     "docker:enableMajor",
     "docker:pinDigests",
@@ -20,6 +17,7 @@
   "commitBodyTable": true,
   "rebaseWhen": "conflicted",
   "additionalBranchPrefix": "{{manager}}/",
+  "labels": ["dependencies", "{{updateType}}", "{{manager}}"],
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch"],
