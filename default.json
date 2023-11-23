@@ -17,13 +17,5 @@
   "commitBodyTable": true,
   "rebaseWhen": "conflicted",
   "additionalBranchPrefix": "{{manager}}/",
-  "labels": ["dependencies", "{{updateType}}", "{{manager}}"],
-  "packageRules": [
-    {
-      "matchUpdateTypes": ["minor", "patch"],
-      "matchCurrentVersion": "!/^0/",
-      "automerge": true,
-      "labels": ["automerged"]
-    }
-  ]
+  "labels": ["dependencies", "{{updateType}}", "{{manager}}"]
 }
