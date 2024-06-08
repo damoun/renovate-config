@@ -1,0 +1,36 @@
+name: validate
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  find_renovate_config_files:
+    name: Find Renovate configuration files
+    outputs:
+      files: ${{ steps.find-files.outputs.files }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: damoun/action-find-files@v2
+        id: find-files
+        with:
+          pattern: '.*json5?$'
+
+  validate_renovate_config:
+    name: Validate Renovate configuration
+    needs: find_renovate_config_files
+    strategy:
+      matrix:
+        file: ${{ fromJson(needs.find_renovate_config_files.outputs.files) }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: suzuki-shunsuke/github-action-renovate-config-validator@v1.0.1
+        name: Run Renovate configuration validator
+        with:
+          config_file_path: ${{ matrix.file }}
