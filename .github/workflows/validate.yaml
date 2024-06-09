@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
-      - uses: damoun/action-find-files@v2
+      - uses: damoun/action-find-files@d0c8b39775242003138d0e125c527f12b5a82459 # v2
         id: find-files
         with:
           pattern: '.*json5?$'
@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
-      - uses: suzuki-shunsuke/github-action-renovate-config-validator@v1.0.1
+      - uses: suzuki-shunsuke/github-action-renovate-config-validator@b54483862375f51910a60c4f498e927d4f3df466 # v1.0.1
         name: Run Renovate configuration validator
         with:
           config_file_path: ${{ matrix.file }}
