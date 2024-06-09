@@ -15,7 +15,7 @@ jobs:
       files: ${{ steps.find-files.outputs.files }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
       - uses: damoun/action-find-files@v2
         id: find-files
         with:
@@ -29,7 +29,7 @@ jobs:
         file: ${{ fromJson(needs.find_renovate_config_files.outputs.files) }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
       - uses: suzuki-shunsuke/github-action-renovate-config-validator@v1.0.1
         name: Run Renovate configuration validator
         with:
