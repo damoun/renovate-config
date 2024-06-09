@@ -1,0 +1,8 @@
+{
+  "extends": [
+    "github>damoun/renovate-config"
+  ],
+  "schedule": [
+    "after 10:00 before 18:00 every weekday except after 12:00 before 14:00"
+  ]
+}
