@@ -1,21 +1,69 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "additionalBranchPrefix": "{{manager}}/",
+  "commitBodyTable": true,
+  "dependencyDashboardTitle": "Renovate Dashboard",
   "extends": [
     "config:recommended",
+    ":dependencyDashboard",
+    ":enablePreCommit",
+    ":ignoreUnstable",
+    ":semanticCommits",
+    ":semanticPrefixFixDepsChoreOthers",
+    ":separateMultipleMajorReleases",
     ":separateMultipleMajorReleases",
     ":timezone(Europe/Amsterdam)",
-    ":dependencyDashboard",
     "docker:enableMajor",
     "docker:pinDigests",
-    ":enablePreCommit",
-    ":assignee(damoun)"
+    "group:recommended",
+    "helpers:pinGitHubActionDigests",
+    "preview:dockerCompose",
+    "preview:dockerVersions",
+    "regexManagers:dockerfileVersions",
+    "regexManagers:githubActionsVersions"
   ],
+  "kubernetes": {
+    "fileMatch": [
+      "\\.ya?ml$"
+    ]
+  },
+  "labels": [
+    "dependencies",
+    "{{updateType}}",
+    "{{manager}}"
+  ],
+  "minimumReleaseAge": "3 days",
   "onboarding": true,
-  "requireConfig": "required",
-  "timezone": "Europe/Amsterdam",
-  "dependencyDashboardTitle": "Renovate Dashboard",
-  "commitBodyTable": true,
+  "packageRules": [
+    {
+      "description": "v prefix workaround for action updates",
+      "extractVersion": "^(?<version>v\\d+\\.\\d+\\.\\d+)$",
+      "matchDepTypes": [
+        "action"
+      ],
+      "versioning": "regex:^v(?<major>\\d+)(\\.(?<minor>\\d+)\\.(?<patch>\\d+))?$"
+    },
+    {
+      "description": "Remove v prefix in regex `_VERSION` updates",
+      "extractVersion": "^?v?(?<version>\\d+\\.\\d+\\.\\d+.*)$",
+      "matchManagers": [
+        "regex"
+      ],
+      "versioning": "regex:^v?(?<major>\\d+)(\\.(?<minor>\\d+)\\.(?<patch>\\d+.*))?$"
+    }
+  ],
+  "prCreation": "not-pending",
   "rebaseWhen": "conflicted",
-  "additionalBranchPrefix": "{{manager}}/",
-  "labels": ["dependencies", "{{updateType}}", "{{manager}}"]
+  "requireConfig": "required",
+  "rollbackPrs": true,
+  "schedule": [
+    "after 4am on monday and tuesday"
+  ],
+  "vulnerabilityAlerts": {
+    "addLabels": [
+      "security"
+    ],
+    "description": "Be sure that the Dependency graph and Dependabot alerts are enabled for the repo. Details: https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts",
+    "enabled": true
+  }
 }
