@@ -55,7 +55,6 @@
   "prCreation": "not-pending",
   "rebaseWhen": "conflicted",
   "requireConfig": "required",
-  "rollbackPrs": true,
   "schedule": [
     "after 4am on monday and tuesday"
   ],
