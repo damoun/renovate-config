@@ -31,7 +31,13 @@
   ],
   "minimumReleaseAge": "3 days",
   "onboarding": true,
+  "automerge": false,
   "packageRules": [
+    {
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "automergeType": "pr"
+    },
     {
       "description": "v prefix workaround for action updates",
       "extractVersion": "^(?<version>v\\d+\\.\\d+\\.\\d+)$",
@@ -53,7 +59,7 @@
   "rebaseWhen": "conflicted",
   "requireConfig": "required",
   "schedule": [
-    "after 4am on monday and tuesday"
+    "after 9am and before 5pm on monday,tuesday,wednesday,thursday"
   ],
   "vulnerabilityAlerts": {
     "addLabels": [
