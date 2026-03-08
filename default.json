@@ -49,8 +49,10 @@
       "versioning": "regex:^v?(?<major>\\d+)(\\.(?<minor>\\d+)\\.(?<patch>\\d+.*))?$"
     }
   ],
+  "assignees": ["renovatebot"],
   "prCreation": "not-pending",
   "rebaseWhen": "conflicted",
+  "reviewers": ["damoun"],
   "requireConfig": "required",
   "schedule": [
     "after 4am on monday and tuesday"
