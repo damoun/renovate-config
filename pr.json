@@ -1,0 +1,15 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "additionalBranchPrefix": "{{manager}}/",
+  "assignees": ["renovatebot"],
+  "commitBodyTable": true,
+  "labels": [
+    "dependencies",
+    "{{updateType}}",
+    "{{manager}}"
+  ],
+  "prCreation": "not-pending",
+  "rebaseWhen": "conflicted",
+  "requireConfig": "required",
+  "reviewers": ["damoun"]
+}

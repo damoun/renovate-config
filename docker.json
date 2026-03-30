@@ -1,0 +1,19 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "docker:enableMajor",
+    "preview:dockerCompose",
+    "preview:dockerVersions",
+    "regexManagers:dockerfileVersions"
+  ],
+  "packageRules": [
+    {
+      "description": "Remove v prefix in regex `_VERSION` updates",
+      "extractVersion": "^?v?(?<version>\\d+\\.\\d+\\.\\d+.*)$",
+      "matchManagers": [
+        "regex"
+      ],
+      "versioning": "regex:^v?(?<major>\\d+)(\\.(?<minor>\\d+)\\.(?<patch>\\d+.*))?$"
+    }
+  ]
+}
