@@ -23,7 +23,7 @@
       "\\.ya?ml$"
     ]
   },
-  "minimumReleaseAge": "3 days",
+  "minimumReleaseAge": "7 days",
   "onboarding": true,
   "schedule": [
     "after 9am and before 5pm on monday,tuesday,wednesday,thursday"
