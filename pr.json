@@ -8,7 +8,7 @@
     "{{updateType}}",
     "{{manager}}"
   ],
-  "prCreation": "not-pending",
+  "prCreation": "immediate",
   "rebaseWhen": "conflicted",
   "requireConfig": "required",
   "reviewers": ["damoun"]
