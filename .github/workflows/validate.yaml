@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
 jobs:
   find_renovate_config_files:
     name: Find Renovate configuration files
