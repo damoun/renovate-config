@@ -19,8 +19,8 @@
   ],
   "dependencyDashboardTitle": "Renovate Dashboard",
   "kubernetes": {
-    "fileMatch": [
-      "\\.ya?ml$"
+    "managerFilePatterns": [
+      "/\\.ya?ml$/"
     ]
   },
   "minimumReleaseAge": "7 days",

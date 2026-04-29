@@ -4,14 +4,14 @@
     "docker:enableMajor",
     "preview:dockerCompose",
     "preview:dockerVersions",
-    "regexManagers:dockerfileVersions"
+    "customManagers:dockerfileVersions"
   ],
   "packageRules": [
     {
       "description": "Remove v prefix in regex `_VERSION` updates",
       "extractVersion": "^?v?(?<version>\\d+\\.\\d+\\.\\d+.*)$",
       "matchManagers": [
-        "regex"
+        "custom.regex"
       ],
       "versioning": "regex:^v?(?<major>\\d+)(\\.(?<minor>\\d+)\\.(?<patch>\\d+.*))?$"
     }
