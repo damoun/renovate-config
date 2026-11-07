@@ -25,6 +25,21 @@
   },
   "minimumReleaseAge": "7 days",
   "onboarding": true,
+  "packageRules": [
+    {
+      "description": "These update types carry no release timestamp, so minimumReleaseAge would hold them forever.",
+      "matchUpdateTypes": [
+        "pin",
+        "pinDigest",
+        "replacement",
+        "lockFileMaintenance",
+        "bump",
+        "rollback",
+        "lockfileUpdate"
+      ],
+      "minimumReleaseAge": null
+    }
+  ],
   "schedule": [
     "after 9am and before 5pm on monday,tuesday,wednesday,thursday"
   ]
