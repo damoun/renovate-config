@@ -14,6 +14,19 @@
         "custom.regex"
       ],
       "versioning": "regex:^v?(?<major>\\d+)(\\.(?<minor>\\d+)\\.(?<patch>\\d+.*))?$"
+    },
+    {
+      "description": "Renovate only gets Docker release timestamps from Docker Hub, so minimumReleaseAge would hold gcr.io distroless digest updates forever.",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "gcr.io/distroless/**"
+      ],
+      "matchUpdateTypes": [
+        "digest"
+      ],
+      "minimumReleaseAge": null
     }
   ]
 }
