@@ -38,6 +38,16 @@
         "lockfileUpdate"
       ],
       "minimumReleaseAge": null
+    },
+    {
+      "description": "One PR for minor Go module bumps, so go.mod/go.sum don't conflict across PRs.",
+      "matchManagers": [
+        "gomod"
+      ],
+      "matchUpdateTypes": [
+        "minor"
+      ],
+      "groupName": "go modules"
     }
   ],
   "schedule": [
