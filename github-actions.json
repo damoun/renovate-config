@@ -11,6 +11,16 @@
         "action"
       ],
       "versioning": "regex:^v(?<major>\\d+)(\\.(?<minor>\\d+)\\.(?<patch>\\d+))?$"
+    },
+    {
+      "description": "One PR for minor workflow updates (actions and workflow tool versions), so neighbouring lines don't conflict across PRs",
+      "matchFileNames": [
+        ".github/workflows/**"
+      ],
+      "matchUpdateTypes": [
+        "minor"
+      ],
+      "groupName": "github workflows"
     }
   ]
 }
