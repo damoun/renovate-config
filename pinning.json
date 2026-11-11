@@ -5,5 +5,18 @@
   "extends": [
     "docker:pinDigests",
     "helpers:pinGitHubActionDigests"
+  ],
+  "packageRules": [
+    {
+      "description": "Keep Terraform version ranges: an exact required_version or provider pin in a reusable module locks every consumer to one release.",
+      "matchManagers": [
+        "terraform"
+      ],
+      "matchDepTypes": [
+        "required_version",
+        "required_provider"
+      ],
+      "rangeStrategy": "update-lockfile"
+    }
   ]
 }
