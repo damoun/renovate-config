@@ -8,7 +8,7 @@
   ],
   "packageRules": [
     {
-      "description": "Keep Terraform version ranges: an exact required_version or provider pin in a reusable module locks every consumer to one release.",
+      "description": "Keep Terraform version ranges, so a reusable module doesn't lock every consumer to one release.",
       "matchManagers": [
         "terraform"
       ],
