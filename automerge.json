@@ -6,6 +6,13 @@
       "matchUpdateTypes": ["patch"],
       "automerge": true,
       "automergeType": "pr"
+    },
+    {
+      "description": "My own reusable workflows, tracked by digest on main.",
+      "matchPackageNames": ["damoun/.github"],
+      "matchUpdateTypes": ["digest"],
+      "automerge": true,
+      "automergeType": "pr"
     }
   ]
 }
