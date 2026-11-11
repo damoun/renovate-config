@@ -40,6 +40,14 @@
       "minimumReleaseAge": null
     },
     {
+      "description": "My own packages, so there is no third-party release to wait out.",
+      "matchPackageNames": [
+        "damoun/**",
+        "ghcr.io/damoun/**"
+      ],
+      "minimumReleaseAge": null
+    },
+    {
       "description": "One PR for minor Go module bumps, so go.mod/go.sum don't conflict across PRs.",
       "matchManagers": [
         "gomod"
