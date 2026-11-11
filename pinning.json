@@ -17,6 +17,13 @@
         "required_provider"
       ],
       "rangeStrategy": "update-lockfile"
+    },
+    {
+      "description": "Keep engines ranges, so a project states the runtimes it supports instead of one exact release.",
+      "matchDepTypes": [
+        "engines"
+      ],
+      "rangeStrategy": "update-lockfile"
     }
   ]
 }
