@@ -29,6 +29,10 @@ jobs:
   validate_renovate_config:
     name: Validate Renovate configuration
     needs: find_renovate_config_files
+    env:
+      # Not newer than the Renovate that Mend runs, or --strict demands migrations Mend rejects.
+      # renovate: datasource=npm depName=@suzuki-shunsuke/renovate-config-validator
+      VALIDATOR_VERSION: 44.227.4
     strategy:
       matrix:
         file: ${{ fromJson(needs.find_renovate_config_files.outputs.files) }}
@@ -41,3 +45,4 @@ jobs:
         name: Run Renovate configuration validator
         with:
           config_file_path: ${{ matrix.file }}
+          validator_version: ${{ env.VALIDATOR_VERSION }}
